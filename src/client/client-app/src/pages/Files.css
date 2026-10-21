@@ -1,0 +1,316 @@
+.files {
+  position: relative;
+}
+
+.filesTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+/* Keep title from pushing layout weirdly */
+.filesTitle {
+  margin: 0;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Right-side actions */
+.filesActions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+
+.filesRefresh {
+  cursor: pointer;
+}
+
+.filesList {
+  margin-top: 12px;
+  display: grid;
+  gap: 8px;
+}
+
+.filesRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: var(--surface-color);
+  cursor: default;
+  text-align: left;
+  width: 100%;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+}
+
+/* Ensure file/folder text uses theme text color */
+.filesRow,
+.filesRow * {
+  color: var(--text-color);
+}
+
+.filesRow.isSelected {
+  background: var(--hover-bg);
+  border: 1px solid var(--accent);
+}
+
+.filesLeft {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.filesIcon {
+  font-size: 18px;
+}
+
+.filesName {
+  font-weight: 400;
+  color: var(--text-color);
+}
+
+.filesMeta {
+  font-size: 12px;
+  color: var(--text-color);
+  opacity: 0.75;
+}
+
+.filesMenu {
+  position: fixed;
+  right: 18px;
+  bottom: 86px;
+  background: var(--surface-color);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+  padding: 6px;
+  min-width: 180px;
+  z-index: 1000;
+}
+
+.filesMenuItem {
+  width: 100%;
+  padding: 10px 12px;
+  border: none;
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+  border-radius: 10px;
+  font-size: 15px;
+  color: var(--text-color);
+}
+
+.filesMenuItem:hover {
+  background: var(--hover-bg);
+}
+
+.filesFab {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 2px solid var(--border-color);
+  background: var(--surface-color);
+  color: var(--text-color);
+  font-size: 34px;
+  line-height: 0;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  z-index: 1001;
+}
+
+.filesTop {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.filesTitle {
+  margin: 0;
+}
+
+/* Star button like Edit page star */
+.filesStar {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  border: 1px solid var(--border-color);
+  background: transparent;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  font-size: 18px;
+  color: var(--placeholder-color);
+}
+
+.filesStar:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.filesStar.isStarred {
+  color: #f5c518;
+}
+
+/* Refresh button consistent with the UI */
+.filesRefresh {
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px solid var(--border-color);
+  background: var(--surface-color);
+  cursor: pointer;
+  font-size: 14px;
+  color: var(--text-color);
+}
+
+.filesRefresh:hover {
+  background: var(--hover-bg);
+}
+
+/* Right-click context menu */
+.filesCtxMenu {
+  position: fixed;
+  background: var(--surface-color);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+  padding: 6px;
+  min-width: 180px;
+  z-index: 2000;
+}
+
+.filesCtxItem {
+  width: 100%;
+  padding: 10px 12px;
+  border: none;
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+  border-radius: 10px;
+  font-size: 15px;
+  color: var(--text-color);
+}
+
+.filesCtxItem:hover {
+  background: var(--hover-bg);
+}
+
+/* Grey "Rename" */
+.filesCtxItemRename {
+  color: var(--text-color);
+}
+
+/* Red "Delete" */
+.filesCtxItemDelete {
+  color: #ef4444;
+}
+
+
+/* Red "Delete" */
+.filesCtxItemDelete {
+  color: #ef4444;
+}
+
+/* -------- UploadWindow modal -------- */
+.uploadOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5000;
+  padding: 16px;
+}
+
+.uploadWindow {
+  width: 420px;
+  max-width: 95vw;
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.18);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.uploadHeader {
+  padding: 12px 14px;
+  border-bottom: 1px solid #e5e7eb;
+  background: var(--surface-color);
+}
+
+.uploadTitle {
+  font-weight: 800;
+  color: var(--text-color);
+}
+
+.uploadDrop {
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.uploadDrop.isDragOver {
+  background: #eef2f7;
+}
+
+.uploadHint {
+  font-size: 14px;
+  color: var(--text-color);
+  opacity: 0.8;
+}
+
+.uploadActionsRow {
+  display: flex;
+  gap: 10px;
+}
+
+.uploadBtn {
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid var(--border-color);
+  background: var(--surface-color);
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.uploadBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.uploadBtn.primary {
+  border: 1px solid var(--accent);
+}
+
+.uploadBtn.cancel {
+  background: transparent;
+}
+
+.uploadError {
+  color: #b00020;
+  font-size: 13px;
+}
+
+.uploadFooter {
+  border-top: 1px solid #e5e7eb;
+  padding: 12px 14px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  background: white;
+}
